@@ -69,5 +69,12 @@ namespace MartianRobots.Domain
                 _ => throw new InvalidOperationException($"Unsupported direction {Direction}")
             };
         }
+
+        public override string ToString()
+        {
+            var result = $"{Position.X} {Position.Y} {Direction.ToCode()}";
+
+            return IsLost ? $"{result} LOST" : result;
+        }
     }
 }
