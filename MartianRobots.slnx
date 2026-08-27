@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MartianRobots/MartianRobots.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MartianRobots.Tests/MartianRobots.Tests.csproj" />
+  </Folder>
+</Solution>
