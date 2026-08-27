@@ -41,6 +41,7 @@ namespace MartianRobots.Domain
 
             var nextPosition = GetNextPosition();
 
+            // Move normally when the next position is still inside the grid.
             if (grid.IsInside(nextPosition))
             {
                 Position = nextPosition;
@@ -48,11 +49,14 @@ namespace MartianRobots.Domain
                 return;
             }
 
+            // If another robot was already lost here, ignore this move.
             if (grid.HasScent(Position))
             {
                 return;
             }
 
+            // The robot is leaving the grid for the first time from this position.
+            // Leave a scent so future robots can avoid being lost here.
             grid.AddScent(Position);
 
             IsLost = true;
